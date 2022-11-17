@@ -22,7 +22,14 @@ namespace OOP_Labb_4
             EmpStack.Push(alma);
             EmpStack.Push(gustaf);
 
-
+            // Write out all of the Employees in EmpStack
+            int ItemsInStack = EmpStack.Count;
+            foreach(Employee e in EmpStack)
+            {
+                ItemsInStack--;
+                Console.WriteLine("ID: {0}, Name: {1}, Gender: {2}, Salary: {3}kr", e.GetId(), e.GetName(), e.GetGender(), e.GetSalary());
+                Console.WriteLine("Items left in stack is {0}", ItemsInStack);
+            }
 
 
         }
