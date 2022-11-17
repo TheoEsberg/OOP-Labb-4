@@ -7,62 +7,122 @@ namespace OOP_Labb_4
     {
         static void Main(string[] args)
         {
-            #region Create Employees
+            #region Create Employees and Stack
             // Create five different Employees
             Employee E1, E2, E3, E4, E5;
             CreateEmployees(out E1, out E2, out E3, out E4, out E5);
-            #endregion
 
-            #region Create Employees Stack
             // Stack
             Stack<Employee> EmpStack = new Stack<Employee>();
             AddEmployeesToStack(E1, E2, E3, E4, E5, EmpStack);
             #endregion
 
             #region Print Employees in EmpStack
+            WriteCenteredLabel("All employees in the stack");
+
             // Write out all of the Employees in EmpStack
             foreach (Employee e in EmpStack)
             {
-                Console.WriteLine("ID: {0}, Name: {1}, Gender: {2}, Salary: {3}kr", e.GetId(), e.GetName(), e.GetGender(), e.GetSalary());
-                Console.WriteLine("Employees left in stack: {0}", EmpStack.Count);
+                WriteEmployeeInfo(e.GetId(), e.GetName(), e.GetGender(), e.GetSalary());
+                WriteCenteredLabel("Employees left in stack: " + EmpStack.Count, false);
             }
             #endregion
 
-            // Make a new blank row for easier readability in console
-            Console.WriteLine();
-
             #region Pop Employees in EmpStack
+            WriteCenteredLabel("Pop all the employees in the stack");
+
             // Pop all of the Employees in EmpStack
             while (EmpStack.Count > 0)
             {
                 Employee e = EmpStack.Pop();
-                Console.WriteLine("ID: {0}, Name: {1}, Gender: {2}, Salary: {3}kr", e.GetId(), e.GetName(), e.GetGender(), e.GetSalary());
-                Console.WriteLine("Employees left in stack: {0}", EmpStack.Count);
+                WriteEmployeeInfo(e.GetId(), e.GetName(), e.GetGender(), e.GetSalary());
+                WriteCenteredLabel("Employees left in stack: " + EmpStack.Count, false);
             }
             #endregion
 
             // Add all of the Emplyees back to the stack
             AddEmployeesToStack(E1, E2, E3, E4, E5, EmpStack);
 
-            // Make a new blank row for easier readability in console
-            Console.WriteLine();
+            #region Peek Employees in EmpStack
+            WriteCenteredLabel("Use peek on the employee stack");
 
-            #region Peek EmpStack
             // Get the info about the first employee in EmpStack two times with Peek
             for (int i = 0; i < 2; i++)
             {
                 Employee e = EmpStack.Peek();
-                Console.WriteLine("ID: {0}, Name: {1}, Gender: {2}, Salary: {3}kr", e.GetId(), e.GetName(), e.GetGender(), e.GetSalary());
-                Console.WriteLine("Employees left in stack: {0}", EmpStack.Count);
+                WriteEmployeeInfo(e.GetId(), e.GetName(), e.GetGender(), e.GetSalary());
+                WriteCenteredLabel("Employees left in stack: " + EmpStack.Count, false);
             }
             #endregion
 
-            #region Contains EmpStack
+            #region Contains Employees in EmpStack
+            WriteCenteredLabel("Check if the employee 'E3' is in the stack");
+
             // Check if employee three exists in the stack
             bool ExistsInStack = EmpStack.Contains(E3);
-            if (!ExistsInStack) { Console.WriteLine("Employee E3 does not exist in EmpStack."); }
-            else { Console.WriteLine("Employee E3 exist in EmpStack."); }
+            if (!ExistsInStack) { WriteCenteredLabel("Employee E3 does not exist in EmpStack.", true); }
+            else { WriteCenteredLabel("Employee E3 exist in EmpStack.", true); }
             #endregion
+
+            // Create a list of Employees called EmpList
+            List<Employee> EmpList = new List<Employee>();
+            AddEmployeesToList(E1, E2, E3, E4, E5, EmpList);
+
+            WriteCenteredLabel("Check if the employee 'E2' is in the list");
+
+            bool ExistsInList = EmpList.Contains(E2);
+            if (!ExistsInList) { WriteCenteredLabel("Employee E2 does not exist in EmpList.", true); }
+            else { WriteCenteredLabel("Employee E2 exist in EmpList.", true); }
+
+            // -------------- FIND ---------------
+            WriteCenteredLabel("Find the first Male in EmpList");
+            if (EmpList.Find(x => x.GetGender() == "Male") != null)
+            {
+                Employee e = EmpList.Find(x => x.GetGender() == "Male");
+                WriteEmployeeInfo(e.GetId(), e.GetName(), e.GetGender(), e.GetSalary());
+            } 
+            else 
+            {
+                WriteCenteredLabel("There was no Employees with Male gender in EmpList", true);
+            }
+
+            WriteCenteredLabel("Find all Males in EmpList");
+            List<Employee> MaleEmpList = EmpList.FindAll(x => x.GetGender() == "Male");
+            foreach (Employee e in MaleEmpList)
+            {
+                WriteEmployeeInfo(e.GetId(), e.GetName(), e.GetGender(), e.GetSalary());
+            }
+
+        }
+
+        private static void AddEmployeesToList(Employee E1, Employee E2, Employee E3, Employee E4, Employee E5, List<Employee> EmpList)
+        {
+            EmpList.Add(E1);
+            EmpList.Add(E2);
+            EmpList.Add(E3);
+            EmpList.Add(E4);
+            EmpList.Add(E5);
+        }
+
+        private static void WriteEmployeeInfo(int id, string name, string gender, int salary)
+        {
+            Console.WriteLine(String.Format("\n{0," + ((Console.WindowWidth / 2) - 2) + "} {1, 1} {2, -10}", "Id", ":", id));
+            Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) - 2) + "} {1, 1} {2, -10}", "Name", ":", name));
+            Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) - 2) + "} {1, 1} {2, -10}", "Gender", ":", gender));
+            Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) - 2) + "} {1, 1} {2, -10}", "Salary", ":", salary));
+        }
+
+        private static void WriteCenteredLabel(string LabelText)
+        {
+            Console.WriteLine(String.Format("\n\n{0," + ((Console.WindowWidth / 2) + (LabelText.Length / 2)) + "}", LabelText));
+            string divider = "--------------------------------------------------------";
+            Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (divider.Length / 2)) + "}", divider));
+        }
+
+        private static void WriteCenteredLabel(string LabelText, bool NewLine)
+        {
+            if (NewLine) { Console.WriteLine(); }
+            Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (LabelText.Length / 2)) + "}", LabelText));
         }
 
         private static void AddEmployeesToStack(Employee E1, Employee E2, Employee E3, Employee E4, Employee E5, Stack<Employee> EmpStack)
