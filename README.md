@@ -8,9 +8,9 @@ Denna labb handlar om att använda två vanliga generics typs inom C#. Du kommer
 
 ## Del 1 – Stack
 
-- [ ]  Skapa en klass
-    - [ ]  Du ska skapa en klass som heter `Employee`
-    - [ ]  Denna klassen har flera egenskaper som ID, Name, Gender, Salary.
+- [x]  Skapa en klass
+    - [x]  Du ska skapa en klass som heter `Employee`
+    - [x]  Denna klassen har flera egenskaper som ID, Name, Gender, Salary.
 
 - [ ]  Skapa en Stack med objekten
     - [ ]  I `Main()`metoden ska du skapa fem objekt av klassen med olika ID, namn, gender och salary.
