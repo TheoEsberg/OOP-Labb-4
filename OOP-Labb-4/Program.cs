@@ -19,9 +19,10 @@ namespace OOP_Labb_4
             foreach (Employee e in EmpStack)
             {
                 Console.WriteLine("ID: {0}, Name: {1}, Gender: {2}, Salary: {3}kr", e.GetId(), e.GetName(), e.GetGender(), e.GetSalary());
-                Console.WriteLine("Items left in stack is {0}", EmpStack.Count);
+                Console.WriteLine("Employees left in stack: {0}", EmpStack.Count);
             }
 
+            // Make a new blank row for easier readability in console
             Console.WriteLine();
 
             // Pop all of the Employees in EmpStack
@@ -34,6 +35,20 @@ namespace OOP_Labb_4
 
             // Add all of the Emplyees back to the stack
             AddEmployeesToStack(E1, E2, E3, E4, E5, EmpStack);
+
+            // Make a new blank row for easier readability in console
+            Console.WriteLine();
+
+            // Get the info about the first employee in EmpStack two times with Peek
+            for (int i = 0; i < 2; i++)
+            {
+                Employee e = EmpStack.Peek();
+                Console.WriteLine("ID: {0}, Name: {1}, Gender: {2}, Salary: {3}kr", e.GetId(), e.GetName(), e.GetGender(), e.GetSalary());
+                Console.WriteLine("Employees left in stack: {0}", EmpStack.Count);
+            }
+
+
+
         }
 
         private static void AddEmployeesToStack(Employee E1, Employee E2, Employee E3, Employee E4, Employee E5, Stack<Employee> EmpStack)
