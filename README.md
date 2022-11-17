@@ -19,10 +19,10 @@ Denna labb handlar om att använda två vanliga generics typs inom C#. Du kommer
     - [x]  Skriver ut alla objekt i din Stack.
     - [x]  Du måste använda en foreach-loop för att skriva ut alla elements i stacken
     - [x]  Efter varje rad eller element måste du skriva ut hur många Items kvar i Stack.
-- [ ]  Hämta ut alla genom Pop-metoden
-    - [ ]  Hämta alla objekt i Stack genom `POP()` metod och skriv ut dem
-    - [ ]  Efter varje rad eller element måste du skriva ut hur många Items kvar i Stack.
-    - [ ]  Lägg till alla objekt igen genom `Push()` metod
+- [x]  Hämta ut alla genom Pop-metoden
+    - [x]  Hämta alla objekt i Stack genom `POP()` metod och skriv ut dem
+    - [x]  Efter varje rad eller element måste du skriva ut hur många Items kvar i Stack.
+    - [x]  Lägg till alla objekt igen genom `Push()` metod
 - [ ]  Hämta  objekt igen med Peek-metoden
     - [ ]  Hämta två objekt genom `Peek()` metod.
     - [ ]  Efter varje rad eller element måste du skriva ut hur många Items kvar i Stack.
