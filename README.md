@@ -12,9 +12,9 @@ Denna labb handlar om att använda två vanliga generics typs inom C#. Du kommer
     - [x]  Du ska skapa en klass som heter `Employee`
     - [x]  Denna klassen har flera egenskaper som ID, Name, Gender, Salary.
 
-- [ ]  Skapa en Stack med objekten
-    - [ ]  I `Main()`metoden ska du skapa fem objekt av klassen med olika ID, namn, gender och salary.
-    - [ ]  Sedan ska du skapa en `Stack` och lägga till de fem objekten du skapat med `Push()` i Stacken.
+- [x]  Skapa en Stack med objekten
+    - [x]  I `Main()`metoden ska du skapa fem objekt av klassen med olika ID, namn, gender och salary.
+    - [x]  Sedan ska du skapa en `Stack` och lägga till de fem objekten du skapat med `Push()` i Stacken.
 - [ ]  Skriv ut alla objekt i din Stack
     - [ ]  Skriver ut alla objekt i din Stack.
     - [ ]  Du måste använda en foreach-loop för att skriva ut alla elements i stacken
