@@ -7,6 +7,7 @@ namespace OOP_Labb_4
     {
         static void Main(string[] args)
         {
+            // --------------- PART ONE (STACK) ---------------
             #region Create Employees and Stack
             // Create five different Employees
             Employee E1, E2, E3, E4, E5;
@@ -55,27 +56,45 @@ namespace OOP_Labb_4
             }
             #endregion
 
-            #region Contains Employees in EmpStack
+            #region Contains Employee in EmpStack
             WriteCenteredLabel("Check if the employee 'E3' is in the stack");
 
             // Check if employee three exists in the stack
             bool ExistsInStack = EmpStack.Contains(E3);
-            if (!ExistsInStack) { WriteCenteredLabel("Employee E3 does not exist in EmpStack.", true); }
-            else { WriteCenteredLabel("Employee E3 exist in EmpStack.", true); }
+            if (ExistsInStack) 
+            { 
+                WriteCenteredLabel("Employee E3 exist in EmpStack.", false); 
+            }
+            else 
+            { 
+                WriteCenteredLabel("Employee E3 does not exist in EmpStack.", false); 
+            }
             #endregion
 
+
+            // --------------- PART TWO (LIST) ---------------
+            #region Create a list of Employees
             // Create a list of Employees called EmpList
             List<Employee> EmpList = new List<Employee>();
             AddEmployeesToList(E1, E2, E3, E4, E5, EmpList);
+            #endregion
 
+            #region Contains Employee in EmpList
             WriteCenteredLabel("Check if the employee 'E2' is in the list");
 
             bool ExistsInList = EmpList.Contains(E2);
-            if (!ExistsInList) { WriteCenteredLabel("Employee E2 does not exist in EmpList.", true); }
-            else { WriteCenteredLabel("Employee E2 exist in EmpList.", true); }
+            if (!ExistsInList) 
+            { 
+                WriteCenteredLabel("Employee E2 does not exist in EmpList.", false); 
+            }
+            else 
+            { 
+                WriteCenteredLabel("Employee E2 exist in EmpList.", false); 
+            }
+            #endregion
 
-            // -------------- FIND ---------------
-            WriteCenteredLabel("Find the first Male in EmpList");
+            #region Find first Male
+            WriteCenteredLabel("Find the first Male");
             if (EmpList.Find(x => x.GetGender() == "Male") != null)
             {
                 Employee e = EmpList.Find(x => x.GetGender() == "Male");
@@ -83,16 +102,30 @@ namespace OOP_Labb_4
             } 
             else 
             {
-                WriteCenteredLabel("There was no Employees with Male gender in EmpList", true);
+                WriteCenteredLabel("There was no Employees with Male gender", false);
             }
+            #endregion
 
-            WriteCenteredLabel("Find all Males in EmpList");
+            #region Find all Males
+            WriteCenteredLabel("Find all Males");
             List<Employee> MaleEmpList = EmpList.FindAll(x => x.GetGender() == "Male");
-            foreach (Employee e in MaleEmpList)
+            if (MaleEmpList.Count > 0)
             {
-                WriteEmployeeInfo(e.GetId(), e.GetName(), e.GetGender(), e.GetSalary());
+                foreach (Employee e in MaleEmpList)
+                {
+                    WriteEmployeeInfo(e.GetId(), e.GetName(), e.GetGender(), e.GetSalary());
+                }
+            } 
+            else
+            {
+                WriteCenteredLabel("There was no Employees with Male gender", false);
             }
 
+            #endregion
+
+
+            // Read key to stop program from ending
+            Console.ReadKey();
         }
 
         private static void AddEmployeesToList(Employee E1, Employee E2, Employee E3, Employee E4, Employee E5, List<Employee> EmpList)
