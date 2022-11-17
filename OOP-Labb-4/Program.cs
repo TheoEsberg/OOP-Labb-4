@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace OOP_Labb_4
 {
@@ -6,7 +7,24 @@ namespace OOP_Labb_4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // Create five different Employees
+            Employee erik = new Employee(1, "Erik", "Male", 12500);
+            Employee kalle = new Employee(2, "Kalle", "Male", 21000);
+            Employee zoe = new Employee(3, "Zoe", "Female", 6400);
+            Employee alma = new Employee(4, "Alma", "Female", 52500);
+            Employee gustaf = new Employee(5, "Gustaf", "Male", 4900);
+
+            // Stack
+            Stack<Employee> EmpStack = new Stack<Employee>();
+            EmpStack.Push(erik);
+            EmpStack.Push(kalle);
+            EmpStack.Push(zoe);
+            EmpStack.Push(alma);
+            EmpStack.Push(gustaf);
+
+
+
+
         }
     }
 }
