@@ -61,13 +61,13 @@ namespace OOP_Labb_4
 
             // Check if employee three exists in the stack
             bool ExistsInStack = EmpStack.Contains(E3);
-            if (ExistsInStack) 
+            if (!ExistsInStack) 
             { 
-                WriteCenteredLabel("Employee E3 exist in EmpStack.", false); 
+                WriteCenteredLabel("Employee E3 does not exist in EmpStack.", false); 
             }
             else 
             { 
-                WriteCenteredLabel("Employee E3 does not exist in EmpStack.", false); 
+                WriteCenteredLabel("Employee E3 exist in EmpStack.", false); 
             }
             #endregion
 
