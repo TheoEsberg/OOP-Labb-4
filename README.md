@@ -1,4 +1,5 @@
 # OOP-Labb-4
+Theo Esberg, SUT22 Campus Varberg
 
 # Om uppgiften
 
@@ -34,11 +35,11 @@ Output av Del 1 - Stack
 
 ## Del 2 – List
 
-- [ ]  Skapa en List
-- [ ]  Lägg in fem objekt av klassen `Employee` i din List
-- [ ]  Skapa ett villkor för att kolla om ett visst Item finns i List genom `Contains()` metod, om den finns så skriver ut i konsol "Employee2 object exist in the list", else "Emplyee2 object does not exist in the list".
-- [ ]  Använd sedan `Find()` metod för att hitta och skriva ut den första objekt i List som har `Gender = "Male"`.
-- [ ]  Använd sendan `FinAll()` metod för att hitta och skriva ut alla items i List som har `Gender = "Male"`
+- [x]  Skapa en List
+- [x]  Lägg in fem objekt av klassen `Employee` i din List
+- [x]  Skapa ett villkor för att kolla om ett visst Item finns i List genom `Contains()` metod, om den finns så skriver ut i konsol "Employee2 object exist in the list", else "Emplyee2 object does not exist in the list".
+- [x]  Använd sedan `Find()` metod för att hitta och skriva ut den första objekt i List som har `Gender = "Male"`.
+- [x]  Använd sendan `FinAll()` metod för att hitta och skriva ut alla items i List som har `Gender = "Male"`
 
 
 ![Output av Del 2 - List](https://qlok.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5fb05d32-92a2-4fe0-91d3-ae002318e8a9%2Fassafs.png?table=block&id=3bf75e26-0cd5-4887-bfc0-0d4c02f8376c&spaceId=76ff052e-5519-4c95-9c8a-d50fbda370ef&width=1440&userId=&cache=v2)
