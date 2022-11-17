@@ -47,6 +47,11 @@ namespace OOP_Labb_4
                 Console.WriteLine("Employees left in stack: {0}", EmpStack.Count);
             }
 
+            // Check if employee three exists in the stack
+            bool ExistsInStack = EmpStack.Contains(E3);
+            if (!ExistsInStack) { Console.WriteLine("Employee E3 does not exist in EmpStack."); }
+            else { Console.WriteLine("Employee E3 exist in EmpStack."); }
+
 
 
         }
