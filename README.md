@@ -1,4 +1,5 @@
 # OOP-Labb-4
+Theo Esberg, SUT22 Campus Varberg
 
 # Om uppgiften
 
